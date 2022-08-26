@@ -18,7 +18,7 @@ inquirer
       name: "type",
       message: "请选择创建的类型",
       type: "list",
-      choices: ["Table", "Table+TAB", "GraphicsCommon"],
+      choices: ["Table", "Table+TAB", "GraphicsCommon", "EditTable"],
     },
   ])
   .then((answers) => {
