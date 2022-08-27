@@ -6,7 +6,7 @@ name: publish
 on: [push]
 
 jobs:
-  job1-build:
+  job-build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -15,8 +15,8 @@ jobs:
           node-version: 16
       - run: npm ci
 
-  job2-publish-npm:
-    needs: job1-build
+  job-publish-npm:
+    needs: job-build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -24,11 +24,9 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - name: 'output'
-        run: echo ${{secrets.npm_token}}
-      - name: 'cli'
+      - name: "cli"
         run: npm ci
-      - name: 'publish'
+      - name: "publish"
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
