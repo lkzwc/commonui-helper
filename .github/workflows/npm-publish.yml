@@ -24,11 +24,11 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
+      - name: 'output'
+        run: echo ${{secrets.npm_token}} {{secrets.npm.npm_token}}
       - name: 'cli'
         run: npm ci
       - name: 'publish'
         run: npm publish
-      - name: 'output'
-        run: echo ${{secrets.npm_token}}
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
