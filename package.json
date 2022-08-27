@@ -1,6 +1,6 @@
 {
-  "name": "techui-helper",
-  "version": "1.0.1",
+  "name": "commonui-helper",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
