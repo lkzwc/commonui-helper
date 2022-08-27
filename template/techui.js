@@ -1,7 +1,10 @@
+/**
+ * tecuUI 的模板定义
+ */
+
 export const component_table = (name) =>
-`
+  `
   import React from 'react';
-  import './${name}.scss';
   import {
     ActionType,
     ModalForm,
@@ -84,5 +87,3 @@ export const component_table = (name) =>
   };
   export default ${name};
 `;
-
-
