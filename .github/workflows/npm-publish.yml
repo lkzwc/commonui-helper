@@ -17,7 +17,7 @@ jobs:
       - run: npm test
 
   job2-publish-npm:
-    needs: build
+    needs: job1-build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
