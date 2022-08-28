@@ -6,3 +6,5 @@
 - 使用人士: 不限，非前端人士优先使用
 - 基架: React > 16.8; UI: techUI
 - 其他: 待定
+
+快捷操作方式: --name=Trand --ui=antd-table-page --type=react
