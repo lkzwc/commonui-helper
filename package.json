@@ -1,6 +1,6 @@
 {
   "name": "commonui-helper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "帮助你快速生成组件",
   "main": "index.js",
   "type": "module",
