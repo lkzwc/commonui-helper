@@ -1,11 +1,14 @@
 {
   "name": "commonui-helper",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "帮助你快速生成组件",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "create": "node ./src/index"
+  },
+  "bin":{
+    "setup":"create.js"
   },
   "author": "",
   "license": "ISC",
