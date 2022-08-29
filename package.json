@@ -8,7 +8,7 @@
     "create": "node ./src/index"
   },
   "bin":{
-    "setup":"create.js"
+    "commonui-create":"./src/create.js"
   },
   "author": "",
   "license": "ISC",
