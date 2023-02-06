@@ -9,8 +9,6 @@
 
 > 最终愿景:考虑支持 React 和 Vue 下常用组件库快速生成组件，包括 antd、antdpro、element、techui 等
 
-选择模式：执行 npm run create Demo (Demo 为组件名称)
-参数方式: 执行 npm run create -- --name=Trand --ui=antd-table-page --type=react
 
 1.0.0
 基本框架成型，支持 CI、CD，一键部署
