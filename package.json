@@ -9,9 +9,9 @@
     "create": "node ./src/index"
   },
   "bin":{
-    "commonui-create":"./src/create.js"
+    "ccui":"./src/create.js"
   },
-  "author": "",
+  "author": "lkzwc",
   "license": "ISC",
   "devDependencies": {
     "chalk": "^5.0.1",
