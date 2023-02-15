@@ -1,6 +1,6 @@
 {
   "name": "commonui-helper",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "homepage": "https://github.com/lkzwc/commonui-helper/blob/main/readme.md",
   "description": "帮助你快速生成组件",
   "main": "index.js",
