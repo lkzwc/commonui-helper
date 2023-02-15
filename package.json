@@ -5,6 +5,9 @@
   "description": "帮助你快速生成组件",
   "main": "index.js",
   "type": "module",
+  "scripts": {
+    "cui": "node ./src/create.js"
+  },
   "bin":{
     "ccui":"./src/create.js"
   },
