@@ -5,12 +5,11 @@ import { program } from "commander";
 import path, { resolve } from "path";
 import fs from "fs";
 import { BASE_PATH } from "../commonui.config.js";
-import { component_table } from "../template/techui.js";
+import { component_modal, component_table } from "../template/techui.js";
 import chalk from "chalk";
 
 const __dirname = path.resolve();
 
-console.log("process.argv.", BASE_PATH, process.argv);
 
 // 获取版本;
 (async function readFile() {
@@ -44,13 +43,17 @@ program.addHelpText(
 );
 
 function geneComponentByChoise(name) {
-  inquirer
-    .prompt([
+  inquirer.prompt([
+      {
+        name: "name",
+        message: "请输入创建的组件名称",
+        type: "input",
+    },
       {
         name: "type",
         message: "请选择节点的类型",
         type: "list",
-        choices: ["Table", "Table+TAB", "GraphicsCommon", "EditTable"],
+        choices: ["Table", "Table+TAB", "GraphicsCommon", "EditTable","Modal"],
       },
       {
         name: "template",
@@ -60,32 +63,35 @@ function geneComponentByChoise(name) {
       },
       {
         name: "path",
-        message: "位置路径，相对于项目的根目录，首尾无需输入/",
+        message: "位置路径，相对于项目的根目录，需输入/",
         type: "input",
       },
     ])
     .then((answers) => {
-      console.log(answers, __dirname);
+      // console.log(answers, __dirname);
       fs.writeFile(
-        `${__dirname}/${answers.path}/${name}.tsx`,
-        component_table(name),
-        (res) => {
-          console.log("gene...");
+        `${__dirname}/${answers.path}/${answers.name}.tsx`,
+        geneComponent(answers.type,answers.name),
+        () => {
+          console.log(chalk.green("生成成功，请查看 "));
         }
       );
     });
 }
 
+function geneComponent(type,name){
+  return name === 'Table' && component_table(name) || 
+  name=== "Modal" && component_modal(name)
+}
+
+
+// 指令解析
 function geneComponentByStr() {
   program
     .usage("<command [option]>")
-    // .version(info?.version, "-v,--version")
-    // .description(`${info?.name} : ${info?.version} ${info?.description} `)
-    // .command("create", "create a 组件")
-    .requiredOption("-N,--name <name>", "【指定组件名称】:Name")
-    .requiredOption("-U,--ui <ui>", "【指定生成的组件类型】:antd-table-page")
-    .requiredOption("-T,--type <type>", "【组件模板二选一】:react/vue");
-
+    .version(info?.version, "-v,--version")
+    .description(`${info?.name} : ${info?.version} ${info?.description} `)
+  
   program.parse(process.argv);
   console.log("program.opts()", program.opts());
 }
