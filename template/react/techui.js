@@ -204,7 +204,7 @@ const ${name} = ({}: ${name}Props) => <ModalForm
         if (res.code === 200) {
           message.success('新增成功！');
         } else {
-          message.success("新增过程发生错误${res.message},请联系管理员！");
+          message.success('新增过程发生错误,请联系管理员！');
         }
       });
     } else {
@@ -213,7 +213,7 @@ const ${name} = ({}: ${name}Props) => <ModalForm
         if (res.code === 200) {
           message.success('修改成功！');
         } else {
-          message.success("数据更新过程发生错误${res.message},请联系管理员！");
+          message.success("数据更新过程发生错误,请联系管理员！");
         }
       });
     }
