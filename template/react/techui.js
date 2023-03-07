@@ -25,9 +25,23 @@ const ${name} = ({}: ${name}Props) => {
     hideInTable: true,
   },
   {
-    title: '负载名称',
-    dataIndex: 'controllerName',
+    title: "label匹配",
+    valueType:'select',
+    colSize:2,
     hideInTable: true,
+    fieldProps: {
+        showSearch: true,
+        allowClear: true,
+        mode: 'multiple',
+        labelInValue: true,
+        dropdownMatchSelectWidth: 300,
+    },
+    valueEnum: Object.assign({},...nodeEnv?.data?.data?.Labels?.map((item: { Key: any; })=>item.Key).sort().map((one: any)=>({[one]: one})) ?? [])
+
+    // request: async () => {
+    //      const nodeENv = await QueryNodesEnv({})
+    //     return nodeEnv?.data?.data.Labels.map((item: { Key: any; })=>item.Key).sort().map((one: any)=>({[one]: one}))
+    // }
   },
   {
     title: '日期',
